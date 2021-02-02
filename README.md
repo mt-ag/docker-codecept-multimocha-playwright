@@ -74,5 +74,5 @@ docker run -it --rm -v $(pwd)/test/webkit:/tests codecept-multimocha-playwright:
 ## Tests
 
 ```sh
-sudo ./run_tests.sh
+./run_tests.sh
 ```

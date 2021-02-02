@@ -9,15 +9,15 @@ function file_exists() {
   fi
 }
 
-rm -rf ./test/chromium/output
-rm -rf ./test/firefox/output
-rm -rf ./test/webkit/output
+rm -rf ./test/chromium/output || true
+rm -rf ./test/firefox/output || true
+rm -rf ./test/webkit/output || true
 
-docker run -it --rm -v $(pwd)/test/chromium:/tests codecept-multimocha-playwright:latest
+docker run --rm -v $(pwd)/test/chromium:/tests codecept-multimocha-playwright:latest
 
-docker run -it --rm -v $(pwd)/test/firefox:/tests codecept-multimocha-playwright:latest
+docker run --rm -v $(pwd)/test/firefox:/tests codecept-multimocha-playwright:latest
 
-docker run -it --rm -v $(pwd)/test/webkit:/tests codecept-multimocha-playwright:latest
+docker run --rm -v $(pwd)/test/webkit:/tests codecept-multimocha-playwright:latest
 
 file_exists ./test/chromium/output/Chromium_Whatsmybrowser.png
 
