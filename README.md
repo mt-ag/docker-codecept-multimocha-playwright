@@ -1,6 +1,6 @@
 # Docker Codecept Multimocha Playwright
 
-This Image uses the official Playwright Image and setups [Codecept](https://codecept.io/) and [Multimocha](https://codecept.io/reports/#multi-reports). You can mount your Codecept project into a container where it will get executed without additional setup.
+This Image uses the official [Playwright](https://playwright.dev/) Image and setups [Codecept](https://codecept.io/) and [Multimocha](https://codecept.io/reports/#multi-reports). You can mount your Codecept project into a container where it will get executed without additional setup.
 
 ## How to use
 
