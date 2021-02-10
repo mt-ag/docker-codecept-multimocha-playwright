@@ -13,6 +13,9 @@ on:
   # Run tests for any PRs.
   pull_request:
 
+env:
+  IMAGE_NAME: codecept-multimocha-playwright
+
 jobs:
   # Run tests.
   # See also https://docs.docker.com/docker-hub/builds/automated-testing/
@@ -48,12 +51,12 @@ jobs:
         run: echo "${{ secrets.PACKAGE_PAT }}" | docker login https://ghcr.io -u ${{ github.actor }} --password-stdin
 
       - name: Build Image
-        run: docker build . --file Dockerfile -t codecept-multimocha-playwright
+        run: docker build . --file Dockerfile -t $IMAGE_NAME
 
 
       - name: Push image to GitHub Container Registry
         run: |
-          IMAGE_ID=ghcr.io/mt-ag/docker-codecept-multimocha-playwright/codecept-multimocha-playwright
+          IMAGE_ID=ghcr.io/${{ github.repository_owner }}/${{ github.repository.name }}/$IMAGE_NAME
 
           # Change all uppercase to lowercase
           IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
