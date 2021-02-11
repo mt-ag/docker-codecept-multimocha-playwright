@@ -31,7 +31,7 @@ jobs:
             docker-compose --file docker-compose.test.yml build
             docker-compose --file docker-compose.test.yml run sut
           else
-            docker build . --file Dockerfile -t codecept-multimocha-playwright
+            docker build . --file Dockerfile -t codecept-multimocha-playwright --cache-from ghcr.io/mt-ag/codecept-multimocha-playwright:latest
             ./run_tests.sh
           fi
   # Push image to GitHub Packages.
@@ -51,7 +51,7 @@ jobs:
         run: echo "${{ secrets.PACKAGE_PAT }}" | docker login https://ghcr.io -u ${{ github.actor }} --password-stdin
 
       - name: Build Image
-        run: docker build . --file Dockerfile -t $IMAGE_NAME
+        run: docker build . --file Dockerfile -t $IMAGE_NAME --cache-from ghcr.io/mt-ag/codecept-multimocha-playwright:latest
 
 
       - name: Push image to GitHub Container Registry
