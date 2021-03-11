@@ -7,17 +7,17 @@ This Image uses the official [Playwright](https://playwright.dev/) Image and set
 Run your codecept project
 
 ```sh
-docker run -it --rm -v /path/to/your/codecept/folder:/tests codecept-multimocha-playwright:latest
+docker run -it --rm -v /path/to/your/codecept/folder:/tests ghcr.io/mt-ag/codecept-multimocha-playwright:latest
 ```
 
 Run one of the example tests:
 
 ```sh
-docker run -it --rm -v $(pwd)/test/chromium:/tests codecept-multimocha-playwright:latest
+docker run -it --rm -v $(pwd)/test/chromium:/tests ghcr.io/mt-ag/codecept-multimocha-playwright:latest
 
-docker run -it --rm -v $(pwd)/test/firefox:/tests codecept-multimocha-playwright:latest
+docker run -it --rm -v $(pwd)/test/firefox:/tests ghcr.io/mt-ag/codecept-multimocha-playwright:latest
 
-docker run -it --rm -v $(pwd)/test/webkit:/tests codecept-multimocha-playwright:latest
+docker run -it --rm -v $(pwd)/test/webkit:/tests ghcr.io/mt-ag/codecept-multimocha-playwright:latest
 ```
 
 Note that you need Playwright in your Codecept config and multimocha:
