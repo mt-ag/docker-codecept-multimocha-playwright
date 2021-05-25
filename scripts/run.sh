@@ -13,7 +13,9 @@ function show_help() {
 if [[ -d "/tests/" ]]; then
 	echo "Mounted directory has been found."
 
-	cp -a /tests/. /codecept
+	[ -d "/tests/output" ] || mkdir /tests/output
+
+	cp -r /tests/* /codecept/
 
 	[ -d "/codecept/output" ] || mkdir /codecept/output
 
