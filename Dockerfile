@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/playwright:bionic
+FROM mcr.microsoft.com/playwright:v1.12.2-focal
 
 LABEL org.opencontainers.image.source https://github.com/mt-ag/docker-codecept-multimocha-playwright
 
