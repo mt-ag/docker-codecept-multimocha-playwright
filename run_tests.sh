@@ -30,6 +30,6 @@ file_exists ./test/firefox/output/Firefox_Whatsmybrowser.png
 
 file_exists ./test/webkit/output/Webkit_Whatsmybrowser.png
 
-file_exists ./test/video-recording/output/video/*.webm
+file_exists ./test/video-recording/output/videos/*.webm
 
 echo "Tests completed successfully..."
